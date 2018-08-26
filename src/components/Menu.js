@@ -21,7 +21,12 @@ const menus = [
         name : 'San Pham',
         to : '/products',
         exact : false
-    }
+    },
+    {
+        name : 'dang nhap',
+        to : '/login',
+        exact : false
+    },
 ];
 
 //customer link

@@ -4,6 +4,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import NotFound from './components/NotFound';
 import Products from './components/Products';
+import Login from './components/Login';
+
 const routes = [
     {
         path : '/',
@@ -26,10 +28,15 @@ const routes = [
         main : ({match}) => <Products match={match}/>
     },
     {
+        path : '/login',
+        exact : false,
+        main : () => <Login />
+    },
+    {
         path : '',
         exact : false,
         main : () => <NotFound />
-    },
+    }
 ];
 
 export default routes;

@@ -16,6 +16,11 @@ const menus = [
         name : 'Lien he',
         to : '/contact',
         exact : false
+    },
+    {
+        name : 'San Pham',
+        to : '/products',
+        exact : false
     }
 ];
 

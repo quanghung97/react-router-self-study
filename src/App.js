@@ -10,7 +10,7 @@ const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
     return (
         <Route
             path={to} exact={activeOnlyWhenExact} children={() => {
-                
+
             }}
         />
     )
@@ -26,13 +26,22 @@ class App extends Component {
 
                              <ul className="nav navbar-nav">
                                 <li>
-                                    <NavLink exact to="/" className="my-link">Trang chủ</NavLink>
+                                    <NavLink activeStyle={{
+                                        fontWeight: 'bold',
+                                        color: 'red'
+                                       }} exact to="/" className="my-link">Trang chủ</NavLink>
                                 </li>
                                 <li>
-                                   <NavLink to="/about" className="my-link">about</NavLink>
+                                   <NavLink activeStyle={{
+                                       fontWeight: 'bold',
+                                       color: 'red'
+                                      }} to="/about" className="my-link">about</NavLink>
                                 </li>
                                 <li>
-                                   <NavLink to="/contact" className="my-link">Contact</NavLink>
+                                   <NavLink activeStyle={{
+                                       fontWeight: 'bold',
+                                       color: 'red'
+                                      }} to="/contact" className="my-link">Contact</NavLink>
                                 </li>
                              </ul>
                     </nav>

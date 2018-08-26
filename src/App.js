@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 
+//customer link
 const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
     return (
         <Route
-            path={to} exact={activeOnlyWhenExact} children={() => {
-
+            path={to} exact={activeOnlyWhenExact} children={( { match } ) => {
+                var active = match ? 'active abc' : '';
+                return (
+                    <li className={active}>
+                        <Link to={to} className="my-link">{label}</Link>
+                    </li>
+                )
             }}
         />
     )
@@ -25,24 +31,15 @@ class App extends Component {
                     <nav className="navbar">
 
                              <ul className="nav navbar-nav">
-                                <li>
-                                    <NavLink activeStyle={{
-                                        fontWeight: 'bold',
-                                        color: 'red'
-                                       }} exact to="/" className="my-link">Trang chủ</NavLink>
-                                </li>
-                                <li>
-                                   <NavLink activeStyle={{
-                                       fontWeight: 'bold',
-                                       color: 'red'
-                                      }} to="/about" className="my-link">about</NavLink>
-                                </li>
-                                <li>
-                                   <NavLink activeStyle={{
-                                       fontWeight: 'bold',
-                                       color: 'red'
-                                      }} to="/contact" className="my-link">Contact</NavLink>
-                                </li>
+
+                                    <MenuLink label="Trang chủ" to="/" activeOnlyWhenExact={true}/>
+
+
+                                   <MenuLink label="about" to="/about" activeOnlyWhenExact={false}/>
+
+
+                                   <MenuLink label="Contact" to="/contact" activeOnlyWhenExact={false}/>
+
                              </ul>
                     </nav>
                     {/* Nội dung */}

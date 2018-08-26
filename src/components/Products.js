@@ -38,6 +38,9 @@ class Products extends Component {
             )
         });
 
+        var {location} = this.props;
+        console.log(location);
+
         return (
             <div className="container">
                 <div className="row">
